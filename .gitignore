@@ -5,6 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
+*.csv
+*.xlsm
+*.pb
 
 # Distribution / packaging
 .Python
@@ -21,6 +24,10 @@ sdist/
 var/
 wheels/
 share/python-wheels/
+TF_model_prototipe2/
+TF_model_prototipe3/
+TF_model_prototipe4/
+
 *.egg-info/
 .installed.cfg
 *.egg

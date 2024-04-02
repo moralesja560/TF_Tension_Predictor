@@ -19,24 +19,24 @@ password = 'scadamex'
 cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 cursor = cnxn.cursor()
 
-query = r"SELECT * FROM [CSW_Cambio_Rollos] WHERE FECHA like '%2022%' OR FECHA like '%2024%'"
+query = r"SELECT * FROM [CSW_Cambio_Rollos] WHERE FECHA like '%2022%' OR FECHA like '%2023%' OR FECHA like '%2024%'"
 df = pd.read_sql(query, cnxn)
 print(df.head())
 df.to_csv(resource_path(f"coils_t.csv"),index=False)
 
 
-query = r"SELECT * FROM [CSW_HL1_Registro] WHERE FECHA like '%2022%' OR FECHA like '%2024%'"
+query = r"SELECT * FROM [CSW_HL1_Registro] WHERE FECHA like '%2022%' OR FECHA like '%2023%' OR FECHA like '%2024%'"
 df = pd.read_sql(query, cnxn)
 print(df.head())
 df.to_csv(resource_path(f"HL1_t.csv"),index=False)
 
 
-query = r"SELECT * FROM [CSW_HL2_Registro] WHERE FECHA like '%2022%' OR FECHA like '%2024%'"
+query = r"SELECT * FROM [CSW_HL2_Registro] WHERE FECHA like '%2022%' OR FECHA like '%2023%' OR FECHA like '%2024%'"
 df = pd.read_sql(query, cnxn)
 print(df.head())
 df.to_csv(resource_path(f"HL2_t.csv"),index=False)
 
-query = r"SELECT * FROM [CSW_HL3_Registro] WHERE FECHA like '%2022%' OR FECHA like '%2024%'"
+query = r"SELECT * FROM [CSW_HL3_Registro] WHERE FECHA like '%2022%' OR FECHA like '%2023%' OR FECHA like '%2024%'"
 df = pd.read_sql(query, cnxn)
 print(df.head())
 df.to_csv(resource_path(f"HL3_t.csv"),index=False)

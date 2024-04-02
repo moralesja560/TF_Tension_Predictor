@@ -54,19 +54,19 @@ inner_join = final_data.merge(initial_tension, on=["line","FECHA_AMD","HORA"],ho
 
 inner_join2 = final_data.merge(final_tension, on=["line","FECHA_AMD","HORA"],how='right')
 #alternative inner_join
-final_tension = final_tension.rename(columns={'HORA': 'HORA_BU'})
-final_tension = final_tension.rename(columns={'actual_end_hour': 'HORA'})
-final_tension['HORA'] = pd.to_datetime(final_tension['HORA'], format='%H:%M:%S')
-final_tension['HORA'] = final_tension['HORA'].dt.time
-inner_join3 = final_data.merge(final_tension, on=["line","FECHA_AMD","HORA"],how='right')
+#final_tension = final_tension.rename(columns={'HORA': 'HORA_BU'})
+#final_tension = final_tension.rename(columns={'actual_end_hour': 'HORA'})
+#final_tension['HORA'] = pd.to_datetime(final_tension['HORA'], format='%H:%M:%S')
+#final_tension['HORA'] = final_tension['HORA'].dt.time
+#inner_join3 = final_data.merge(final_tension, on=["line","FECHA_AMD","HORA"],how='right')
 
 
 
-print(f"inner join 1: {len(inner_join)} /// inner join 2: {len(inner_join2)} /// inner join 3: {len(inner_join3)}")
+print(f"inner join 1: {len(inner_join)} /// inner join 2: {len(inner_join2)}")
 
 inner_join.to_csv(resource_path("dataset10_t.csv"),index=False)
 inner_join2.to_csv(resource_path("dataset20_t.csv"),index=False)
-inner_join3.to_csv(resource_path("dataset30_t.csv"),index=False)
+#inner_join3.to_csv(resource_path("dataset30_t.csv"),index=False)
 
 
 
